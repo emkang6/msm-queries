@@ -10,8 +10,16 @@ class DirectorsController < ApplicationController
     matching_records = Director.where({ :id => the_id})
 
     @the_director = matching_records.at(0)
-    
+
     render({ :template => "director_templates/details"})
+  end
+
+  def youngest_index
+    render({ :template => "director_templates/youngest"})
+  end
+
+  def eldest_index
+    render({ :template => "director_templates/eldest"})
   end
 
 end
